@@ -178,6 +178,32 @@ footer {
   font-size: 0.9rem;
 }
 
+.whatsapp-custom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #004aad;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-custom:hover {
+  transform: scale(1.1);
+  background-color: #003080;
+}
+
+.whatsapp-icon {
+  width: 30px;
+  height: 30px;
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
   nav ul {
@@ -197,4 +223,5 @@ footer {
   .hero p {
     font-size: 1rem;
   }
+ 
 }
