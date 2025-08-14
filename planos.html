@@ -3,18 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GM Sites | Planos e Preços</title>
+  <title>Planos | GM Sites</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="images/favicon.png" />
-
 </head>
-<a href="https://wa.me/5511949271862?text=Olá!%20Gostaria%20de%20um%20site%20profissional" class="whatsapp-custom" target="_blank" aria-label="WhatsApp">
-  <svg viewBox="0 0 32 32" class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="16" cy="16" r="16" fill="#25D366"/>
-    <path fill="#FFF" d="M22.4 18.6c-.3-.2-1.7-.8-2-1s-.5-.2-.7.1-.8 1-1 1.2c-.2.2-.3.2-.6.1s-1.3-.5-2.4-1.6c-.9-.9-1.6-2.1-1.8-2.4s0-.5.1-.6c.1-.1.3-.3.4-.4.1-.1.2-.2.3-.4.1-.2.1-.3 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3s-1 1-1 2.3 1 2.7 1.1 2.9c.1.1 2 3 5 4.2 1.2.5 2.2.8 3 .9h1.3c.4 0 1.2-.4 1.4-1 .2-.6.2-1 .1-1.1-.1 0-.2-.1-.3-.2z"/>
-  </svg>
-</a>
-
 <body>
   <header>
     <div class="container">
@@ -24,7 +15,7 @@
           <li><a href="index.html#servicos">Serviços</a></li>
           <li><a href="index.html#sobre">Sobre</a></li>
           <li><a href="index.html#contato">Contato</a></li>
-          <li><a href="planos.html">Planos</a></li>
+          <li><a href="planos.html" class="active">Planos</a></li>
         </ul>
       </nav>
     </div>
@@ -32,28 +23,79 @@
 
   <section class="planos">
     <div class="container">
-      <h2>Nossos Planos</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Plano Básico</h3>
-          <p>Site institucional com até 3 páginas, design responsivo e otimizado.</p>
-          <p class="preco">R$ 499</p>
+      <h2>Planos de Criação de Sites</h2>
+      <div class="tabela-planos">
+
+        <div class="plano">
+          <h3>Landing Page</h3>
+          <p class="preco">R$ 900</p>
+          <ul>
+            <li>1 página personalizada</li>
+            <li>Design responsivo</li>
+            <li>Formulário de contato</li>
+            <li>Entrega rápida</li>
+          </ul>
           <a href="index.html#contato" class="btn">Contratar</a>
         </div>
 
-        <div class="card">
-          <h3>Plano Profissional</h3>
-          <p>Site completo com até 6 páginas, SEO básico e performance aprimorada.</p>
-          <p class="preco">R$ 799</p>
+        <div class="plano destaque">
+          <h3>Site 5 Páginas</h3>
+          <p class="preco">R$ 1.800</p>
+          <ul>
+            <li>Até 5 páginas</li>
+            <li>Design profissional</li>
+            <li>SEO básico</li>
+            <li>Formulário de contato</li>
+            <li>Entrega em até 10 dias</li>
+          </ul>
           <a href="index.html#contato" class="btn">Contratar</a>
         </div>
 
-        <div class="card">
-          <h3>Plano Avançado</h3>
-          <p>Site com blog integrado, SEO avançado, suporte mensal e otimização completa.</p>
-          <p class="preco">R$ 1199</p>
+        <div class="plano">
+          <h3>Loja Virtual</h3>
+          <p class="preco">R$ 3.000</p>
+          <ul>
+            <li>Até 20 produtos</li>
+            <li>Carrinho de compras</li>
+            <li>Integração com WhatsApp</li>
+            <li>Design responsivo</li>
+          </ul>
           <a href="index.html#contato" class="btn">Contratar</a>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="planos manutencao">
+    <div class="container">
+      <h2>Planos de Manutenção</h2>
+      <div class="tabela-planos">
+
+        <div class="plano">
+          <h3>Básica</h3>
+          <p class="preco">R$ 120/mês</p>
+          <ul>
+            <li>Atualizações de conteúdo</li>
+            <li>Correção de erros</li>
+            <li>Backup mensal</li>
+            <li>Suporte via WhatsApp</li>
+          </ul>
+          <a href="index.html#contato" class="btn">Contratar</a>
+        </div>
+
+        <div class="plano destaque">
+          <h3>Avançada</h3>
+          <p class="preco">R$ 250/mês</p>
+          <ul>
+            <li>Inclui tudo da básica</li>
+            <li>Otimização SEO</li>
+            <li>Monitoramento de desempenho</li>
+            <li>Backup semanal</li>
+          </ul>
+          <a href="index.html#contato" class="btn">Contratar</a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -63,5 +105,13 @@
       <p>&copy; 2025 GM Sites. Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <!-- Botão WhatsApp azul -->
+  <a href="https://wa.me/5511949271862?text=Olá!%20Gostaria%20de%20um%20site%20profissional" class="whatsapp-custom" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="16" fill="#004aad"/>
+      <path fill="#FFF" d="M22.4 18.6c-.3-.2-1.7-.8-2-1s-.5-.2-.7.1-.8 1-1 1.2c-.2.2-.3.2-.6.1s-1.3-.5-2.4-1.6c-.9-.9-1.6-2.1-1.8-2.4s0-.5.1-.6c.1-.1.3-.3.4-.4.1-.1.2-.2.3-.4.1-.2.1-.3 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3s-1 1-1 2.3 1 2.7 1.1 2.9c.1.1 2 3 5 4.2 1.2.5 2.2.8 3 .9h1.3c.4 0 1.2-.4 1.4-1 .2-.6.2-1 .1-1.1-.1 0-.2-.1-.3-.2z"/>
+    </svg>
+  </a>
 </body>
 </html>

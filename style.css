@@ -224,4 +224,77 @@ footer {
     font-size: 1rem;
   }
  
+  .planos {
+  background: #f4f4f4;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.planos h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #004aad;
+}
+
+.tabela-planos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.plano {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.plano:hover {
+  transform: translateY(-5px);
+}
+
+.plano h3 {
+  color: #004aad;
+  margin-bottom: 10px;
+}
+
+.preco {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.plano ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.plano ul li {
+  margin: 8px 0;
+  color: #555;
+}
+
+.plano .btn {
+  background: #004aad;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.plano .btn:hover {
+  background: #003080;
+}
+
+.destaque {
+  border: 3px solid #004aad;
+  transform: scale(1.05);
+}
+
 }
