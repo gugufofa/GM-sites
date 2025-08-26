@@ -1,300 +1,267 @@
-/* Reset básico */
+/* ======= Fonte ======= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f7f9fc;
-  color: #222;
+  background: #f5f7fa;
+  color: #333;
   line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
+/* ======= Header ======= */
 header {
-  background-color: #004aad;
-  color: white;
-  padding: 15px 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo {
-  height: 350px; /* Aumente conforme necessário: 64px, 72px, etc */
-  max-height: 350px;
-  width: auto;
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
 }
 
-nav ul {
+header .logo {
+  height: 60px;
+}
+
+header nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
-  justify-content: flex-end;
+  gap: 25px;
 }
 
-nav a {
-  color: white;
+header nav a {
+  text-decoration: none;
+  color: #004aad;
   font-weight: 600;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #dfe9ff;
+header nav a:hover,
+header nav a.ativo {
+  color: #002d70;
 }
 
-/* Hero */
+/* ======= Hero ======= */
 .hero {
-  background: linear-gradient(to right, #004aad, #002b80);
-  color: white;
+  background: linear-gradient(135deg, #004aad, #0077ff);
+  color: #fff;
+  padding: 100px 20px;
   text-align: center;
-  padding: 80px 20px;
 }
 
 .hero h2 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .btn {
-  background: #ffffff;
-  color: #004aad;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.3s, color 0.3s;
   display: inline-block;
+  background: linear-gradient(135deg, #004aad, #0077ff);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background: #dfe9ff;
-  color: #002b80;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* Cards de serviço */
-.servicos {
-  background: #fff;
-  padding: 60px 20px;
+/* ======= Seções ======= */
+section {
+  padding: 70px 20px;
+}
+
+section h2 {
   text-align: center;
-}
-
-.cards {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 20px;
-  flex: 1;
-  min-width: 260px;
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
+  font-size: 2rem;
+  margin-bottom: 40px;
   color: #004aad;
-  margin-bottom: 10px;
 }
 
-/* Sobre */
-.sobre {
-  padding: 60px 20px;
-  background: #f4f4f4;
-  text-align: center;
+/* ======= Cards ======= */
+.cards, .grid-modelos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
-/* Contato */
-.contato {
-  background: #ffffff;
-  padding: 60px 20px;
+.card, .modelo-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
 }
 
-.form-contato {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
-  margin: 0 auto;
+.card:hover, .modelo-card:hover {
+  transform: translateY(-6px);
 }
 
+.modelo-card img {
+  border-radius: 12px 12px 0 0;
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ======= Formulário ======= */
 .form-contato input,
 .form-contato textarea {
+  width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
+  margin-bottom: 15px;
   border-radius: 8px;
+  border: 1px solid #ccc;
   font-size: 1rem;
 }
 
 .form-contato button {
-  background: #004aad;
-  color: white;
-  padding: 12px;
+  background: linear-gradient(135deg, #004aad, #0077ff);
+  color: #fff;
   border: none;
-  border-radius: 8px;
-  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .form-contato button:hover {
-  background: #003080;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-#statusForm {
-  margin-top: 20px;
-  text-align: center;
-  color: #004aad;
-}
-
-/* Rodapé */
+/* ======= Footer ======= */
 footer {
   background: #004aad;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 20px;
-  font-size: 0.9rem;
+  margin-top: 50px;
 }
 
-.whatsapp-custom {
+/* Botões flutuantes */
+.social-buttons {
   position: fixed;
-  bottom: 20px;
   right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #004aad;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.social-buttons a {
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  color: #fff;
+  font-size: 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.whatsapp-custom:hover {
+.whatsapp-btn {
+  background: #25D366;
+}
+
+.instagram-btn {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-buttons a:hover {
   transform: scale(1.1);
-  background-color: #003080;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
 
-.whatsapp-icon {
-  width: 30px;
-  height: 30px;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
+/* ======= Responsividade ======= */
+@media (max-width: 992px) {
+  header .container {
+    flex-direction: row;
   }
 
-  .cards {
-    flex-direction: column;
+  header nav ul {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Logo menor em tablets */
+  header .logo {
+    height: 65px;
   }
 
   .hero h2 {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 5vw, 2rem);
   }
 
   .hero p {
     font-size: 1rem;
   }
- 
-  .planos {
-  background: #f4f4f4;
-  padding: 60px 20px;
-  text-align: center;
+
+  .cards, .grid-modelos {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 50px 15px;
+  }
 }
 
-.planos h2 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-  color: #004aad;
+@media (max-width: 480px) {
+  /* Layout mobile */
+  header .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn,
+  .form-contato button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-contato input,
+  .form-contato textarea {
+    font-size: 0.95rem;
+  }
 }
 
-.tabela-planos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
 
-.plano {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s;
-}
 
-.plano:hover {
-  transform: translateY(-5px);
-}
-
-.plano h3 {
-  color: #004aad;
-  margin-bottom: 10px;
-}
-
-.preco {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-.plano ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.plano ul li {
-  margin: 8px 0;
-  color: #555;
-}
-
-.plano .btn {
-  background: #004aad;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.plano .btn:hover {
-  background: #003080;
-}
-
-.destaque {
-  border: 3px solid #004aad;
-  transform: scale(1.05);
-}
-
-}

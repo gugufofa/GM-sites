@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Minha Loja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">Minha Loja</div>
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="index.html#produtos">Produtos</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="contato.html">Contato</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
+    <div class="icons">
+      <input type="text" placeholder="Buscar..." class="search">
+      <button class="cart">🛒</button>
+    </div>
+  </header>
+
+  <!-- Login -->
+  <section class="login-container">
+    <div class="form-box">
+      <h1>Entrar</h1>
+      <form class="form-login">
+        <input type="email" placeholder="E-mail" required>
+        <input type="password" placeholder="Senha" required>
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p>Não tem conta? <a href="#registro" onclick="toggleForm('registro')">Registre-se</a></p>
+    </div>
+
+    <div class="form-box hidden" id="registro">
+      <h1>Criar Conta</h1>
+      <form class="form-login">
+        <input type="text" placeholder="Nome completo" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="password" placeholder="Senha" required>
+        <button type="submit" class="btn">Registrar</button>
+      </form>
+      <p>Já possui conta? <a href="#login" onclick="toggleForm('login')">Faça login</a></p>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>© 2025 Minha Loja - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleForm(form) {
+      document.querySelectorAll(".form-box").forEach(f => f.classList.add("hidden"));
+      if (form === "registro") {
+        document.getElementById("registro").classList.remove("hidden");
+      } else {
+        document.querySelector(".login-container .form-box").classList.remove("hidden");
+      }
+    }
+  </script>
+</body>
+</html>

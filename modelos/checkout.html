@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Minha Loja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">Minha Loja</div>
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="index.html#produtos">Produtos</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="contato.html">Contato</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <div class="icons">
+      <input type="text" placeholder="Buscar..." class="search">
+      <button class="cart">🛒</button>
+    </div>
+  </header>
+
+  <!-- Checkout -->
+  <section class="checkout">
+    <h1>Finalizar Compra</h1>
+
+    <form class="form-checkout">
+      <!-- Dados Pessoais -->
+      <h2>Dados Pessoais</h2>
+      <input type="text" placeholder="Nome Completo" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="tel" placeholder="Telefone" required>
+
+      <!-- Endereço -->
+      <h2>Endereço de Entrega</h2>
+      <input type="text" placeholder="Rua e número" required>
+      <input type="text" placeholder="Bairro" required>
+      <input type="text" placeholder="Cidade" required>
+      <input type="text" placeholder="Estado" required>
+      <input type="text" placeholder="CEP" required>
+
+      <!-- Pagamento -->
+      <h2>Pagamento</h2>
+      <select required>
+        <option value="">Selecione a forma de pagamento</option>
+        <option value="cartao">Cartão de Crédito</option>
+        <option value="boleto">Boleto Bancário</option>
+        <option value="pix">Pix</option>
+      </select>
+
+      <div class="pagamento-cartao">
+        <input type="text" placeholder="Número do cartão" maxlength="16">
+        <input type="text" placeholder="Nome impresso no cartão">
+        <div class="inline">
+          <input type="text" placeholder="Validade (MM/AA)" maxlength="5">
+          <input type="text" placeholder="CVV" maxlength="3">
+        </div>
+      </div>
+
+      <!-- Botão Finalizar -->
+      <button type="submit" class="btn">Confirmar Pedido</button>
+    </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>© 2025 Minha Loja - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
