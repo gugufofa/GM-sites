@@ -3,42 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produto - Minha Loja</title>
-  <link rel="stylesheet" href="./modelo-1.css">
+  <title>Produto - Minha Loja Virtual</title>
+  <link rel="stylesheet" href="modelo-1.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header class="header">
-    <div class="logo">Minha Loja</div>
-    <nav class="nav">
-      <a href="./modelo-1.html">Início</a>
-      <a href="./produto.html">Produtos</a>
-      <a href="#">Categorias</a>
-      <a href="./carrinho.html">Carrinho</a>
-    </nav>
-    <div class="icons">
-      <input type="text" placeholder="Buscar..." class="search">
-      <button class="cart">🛒</button>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <a href="modelo-1.html">Minha Loja</a>
     </div>
+    <nav>
+      <ul>
+        <li><a href="modelo-1.html">Início</a></li>
+        <li><a href="carrinho.html" class="cart">🛒 (0)</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Detalhes do Produto -->
-  <section class="detalhe-produto">
-    <div class="img-box">
-      <img src="https://via.placeholder.com/400" alt="Produto">
-    </div>
-    <div class="info-produto">
-      <h1>Produto Exemplo</h1>
-      <p class="preco">R$ 149,90</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Este é um produto fictício apenas para demonstração do site modelo.</p>
-      <button class="btn">Adicionar ao Carrinho</button>
-    </div>
-  </section>
+  <!-- ===== DETALHE DO PRODUTO ===== -->
+  <main>
+    <section class="produto">
+      <h1>Camisa Pokémon</h1>
 
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p>© 2025 Minha Loja - Todos os direitos reservados.</p>
+      <!-- Mensagem de feedback -->
+      <div id="mensagem-produto" class="mensagem-oculta"></div>
+
+      <div class="produto-detalhe">
+        <img src="images-2/Camisa-Pokemon.webp" alt="Camisa Pokémon">
+        <div class="info">
+          <p class="preco">R$ 79,90</p>
+          <p>Camisa estilizada com tema Pokémon, ideal para fãs da franquia.</p>
+          <button class="btn btn-destaque" onclick="adicionarAoCarrinho(1)">
+            Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 - Minha Loja Virtual</p>
   </footer>
+
+  <!-- JS central -->
+  <script src="modelo-1.js"></script>
 </body>
 </html>

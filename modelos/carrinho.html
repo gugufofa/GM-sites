@@ -3,58 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrinho - Minha Loja</title>
-  <link rel="stylesheet" href="./modelo-1.css">
+  <title>Carrinho - Minha Loja Virtual</title>
+  <link rel="stylesheet" href="modelo-1.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header class="header">
-    <div class="logo">Minha Loja</div>
-    <nav class="nav">
-      <a href="./modelo-1.html">Início</a>
-      <a href="./produto.html">Produtos</a>
-      <a href="#">Categorias</a>
-      <a href="./carrinho.html">Carrinho</a>
-    </nav>
-    <div class="icons">
-      <input type="text" placeholder="Buscar..." class="search">
-      <button class="cart">🛒</button>
+  <header>
+    <div class="logo">
+      <a href="modelo-1.html">Minha Loja</a>
     </div>
+    <nav>
+      <ul>
+        <li><a href="modelo-1.html">Início</a></li>
+        <li><a href="carrinho.html" class="cart">🛒 (0)</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Carrinho -->
-  <section class="carrinho">
-    <h1>Meu Carrinho</h1>
-    <table class="tabela-carrinho">
-      <tr>
-        <th>Produto</th>
-        <th>Preço</th>
-        <th>Quantidade</th>
-        <th>Total</th>
-      </tr>
-      <tr>
-        <td>Produto 1</td>
-        <td>R$ 99,90</td>
-        <td>1</td>
-        <td>R$ 99,90</td>
-      </tr>
-      <tr>
-        <td>Produto 2</td>
-        <td>R$ 149,90</td>
-        <td>2</td>
-        <td>R$ 299,80</td>
-      </tr>
-    </table>
+  <main>
+    <h1>Seu Carrinho</h1>
+    <div id="lista-carrinho"></div>
+    <p class="total-carrinho">Total: <span id="total-carrinho">R$ 0,00</span></p>
+    <a href="checkout.html" class="btn-finalizar">Finalizar Compra</a>
+  </main>
 
-    <div class="resumo-carrinho">
-      <p><strong>Total:</strong> R$ 399,70</p>
-      <button class="btn">Finalizar Compra</button>
-    </div>
-  </section>
-
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p>© 2025 Minha Loja - Todos os direitos reservados.</p>
+  <footer>
+    <p>&copy; 2025 - Minha Loja Virtual</p>
   </footer>
+
+  <!-- Agora só usamos o JS central -->
+  <script src="modelo-1.js"></script>
 </body>
 </html>

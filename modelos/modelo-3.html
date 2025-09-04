@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabor & Praticidade</title>
+  <link rel="stylesheet" href="modelo-3.css" />
+  <link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#d62828" />
+
+</head>
+<body>
+  <header>
+    <div class="logo">🍽️ Sabor & Praticidade</div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#pedido" class="btn">Peça Agora</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner fade-in" id="inicio">
+    <h1>Seu sabor favorito, a um clique de distância</h1>
+    <p>Cardápio online para pedidos rápidos e deliciosos</p>
+    <a href="#cardapio" class="btn-destaque">Ver Cardápio</a>
+  </section>
+
+  <section class="destaques fade-in">
+    <div>🕒 Entrega rápida</div>
+    <div>🍱 Marmitas fresquinhas</div>
+    <div>🎂 Doces artesanais</div>
+    <div>📱 Pedido pelo WhatsApp</div>
+  </section>
+
+  <section class="cardapio fade-in" id="cardapio">
+    <h2>Cardápio</h2>
+
+    <div class="filtros">
+      <button onclick="filtrarCardapio('todos')">Todos</button>
+      <button onclick="filtrarCardapio('marmita')">Marmitas</button>
+      <button onclick="filtrarCardapio('confeitaria')">Confeitaria</button>
+      <button onclick="filtrarCardapio('bebida')">Bebidas</button>
+    </div>
+
+    <div class="card-item" data-categoria="marmita">
+      <img src="images-2/Feijoada Completa.jpg" alt="Feijoada Completa" />
+      <h3>Feijoada Completa</h3>
+      <p>Feijão preto, carnes selecionadas, arroz, farofa e couve</p>
+      <span>R$ 24,90</span>
+      <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20pedir%20uma%20Feijoada%20Completa" class="btn-pedir">Pedir</a>
+    </div>
+
+    <div class="card-item" data-categoria="confeitaria">
+      <img src="images-2/Bolo de Chocolate.webp" alt="Bolo de Chocolate" />
+      <h3>Bolo de Chocolate</h3>
+      <p>Feito com cacau puro, cobertura cremosa e recheio especial</p>
+      <span>R$ 18,00</span>
+      <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20pedir%20um%20Bolo%20de%20Chocolate" class="btn-pedir">Pedir</a>
+    </div>
+
+    <div class="card-item" data-categoria="bebida">
+      <img src="images-2/Suco Natural.jpg" alt="Suco Natural" />
+      <h3>Suco Natural</h3>
+      <p>Escolha entre laranja, maracujá ou abacaxi. 100% natural</p>
+      <span>R$ 7,00</span>
+      <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20pedir%20um%20Suco%20Natural" class="btn-pedir">Pedir</a>
+    </div>
+  </section>
+
+  <section class="galeria fade-in" id="galeria">
+    <h2>Galeria de Sabores</h2>
+    <div class="galeria-grid">
+      <img src="images-2/pratos 1.jpg" alt="Prato 1" />
+      <img src="images-2/pratos 2.jpg" alt="Prato 2" />
+      <img src="images-2/pratos 3.jpeg" alt="Prato 3" />
+      <img src="images-2/pratos 4.jpg" alt="Prato 4" />
+      <img src="images-2/pratos 5.jpeg" alt="Prato 5" />
+      <img src="images-2/pratos 6.jpg" alt="Prato 6" />
+    </div>
+  </section>
+
+  <section class="depoimentos fade-in">
+    <h2>O que dizem nossos clientes</h2>
+    <div class="carousel">
+      <div class="depoimento ativo">“Melhor marmita da cidade! Entrega rápida e comida deliciosa.” – Ana</div>
+      <div class="depoimento">“Os bolos são incríveis, sempre fresquinhos.” – João</div>
+      <div class="depoimento">“Atendimento excelente e cardápio variado.” – Carla</div>
+    </div>
+  </section>
+
+  <section class="sobre fade-in" id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Somos apaixonados por comida caseira e doces artesanais. Cada prato é feito com carinho e ingredientes selecionados para garantir sabor e qualidade.</p>
+  </section>
+
+  <section class="contato fade-in" id="contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required />
+      <input type="tel" placeholder="Telefone" required />
+      <textarea placeholder="Mensagem"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sabor & Praticidade. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Filtro de cardápio
+    function filtrarCardapio(categoria) {
+      const itens = document.querySelectorAll('.card-item');
+      itens.forEach(item => {
+        item.style.display = (categoria === 'todos' || item.dataset.categoria === categoria)
+          ? 'block' : 'none';
+      });
+    }
+
+    // Carrossel de depoimentos
+    let index = 0;
+    const depoimentos = document.querySelectorAll('.depoimento');
+    setInterval(() => {
+      depoimentos[index].classList.remove('ativo');
+      index = (index + 1) % depoimentos.length;
+      depoimentos[index].classList.add('ativo');
+    }, 4000);
+
+    // Animações suaves ao rolar
+    const faders = document.querySelectorAll('.fade-in');
+    const aparecer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+    faders.forEach(el => aparecer.observe(el));
+  </script>
+</body>
+</html>

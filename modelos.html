@@ -1,78 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modelos de Sites | GM Sites</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="./images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GM Sites | Modelos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-
-<!-- Botões flutuantes -->
-<div class="social-buttons">
-  <a href="https://wa.me/5511949271862" target="_blank" class="whatsapp-btn">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://instagram.com/seu_instagram" target="_blank" class="instagram-btn">
-    <i class="fab fa-instagram"></i>
-  </a>
-</div>
-
-
 <body>
+  <!-- HEADER -->
   <header>
     <div class="container">
-      <a href="index.html"><img src="images/logo-gm-sites-2.png" alt="GM Sites Logo" class="logo" /></a>
+      <a href="index.html">
+        <img src="images/logo-gm-sites-2.png" alt="GM Sites Logo" class="logo" />
+      </a>
       <nav>
         <ul>
           <li><a href="index.html#servicos">Serviços</a></li>
           <li><a href="index.html#sobre">Sobre</a></li>
           <li><a href="index.html#contato">Contato</a></li>
           <li><a href="planos.html">Planos</a></li>
-          <li><a href="modelos.html" class="ativo">Modelos</a></li>
+          <li><a href="modelos.html" class="active">Modelos</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h2>Modelos de Sites</h2>
+      <p>Veja alguns exemplos de sites que podemos desenvolver para o seu negócio.</p>
+    </div>
+  </section>
+
+  <!-- MODELOS -->
   <section class="modelos">
     <div class="container">
-      <h2>Modelos de Sites Prontos</h2>
-      <p>Confira alguns modelos que desenvolvemos para inspirar seu projeto.</p>
-      
-          <div class="grid-modelos">
+      <div class="cards">
+
+        <!-- Loja Virtual -->
         <div class="modelo-card">
-          <img src="images/modelo1.jpg" alt="Modelo de Loja Virtual">
+          <span class="material-icons modelo-icone">shopping_cart</span>
           <h3>Loja Virtual</h3>
-          <p>Design moderno e otimizado para vendas online.</p>
-          <a href="" target="_blank" class="btn">Ver Modelo</a>
-        </div>    
-        
-        <div class="modelo-card">
-          <img src="images/modelo2.jpg" alt="Modelo de Restaurante">
-          <h3>Restaurante</h3>
-          <p>Layout elegante para cardápio digital e reservas.</p>
-          <a href="https://exemplo.com/modelo2" target="_blank" class="btn">Ver Modelo</a>
+          <p>Plataforma de vendas online para você vender seus produtos 24h por dia.</p>
+          <a href="#" class="btn">Ver Modelo</a>
         </div>
-        
+
+        <!-- Salão / Barbearia -->
         <div class="modelo-card">
-          <img src="images/modelo3.jpg" alt="Modelo de Portfólio">
-          <h3>Portfólio</h3>
-          <p>Ideal para profissionais e artistas apresentarem seus trabalhos.</p>
-          <a href="https://exemplo.com/modelo3" target="_blank" class="btn">Ver Modelo</a>
+          <span class="material-icons modelo-icone">content_cut</span>
+          <h3>Salão / Barbearia</h3>
+          <p>Site moderno para salões de beleza e barbearias com agendamento online.</p>
+          <a href="#" class="btn">Ver Modelo</a>
         </div>
+
+        <!-- Negócio de Alimentação -->
+        <div class="modelo-card">
+          <span class="material-icons modelo-icone">restaurant</span>
+          <h3>Negócio de Alimentação</h3>
+          <p>Perfeito para restaurantes, marmitarias e confeitarias divulgarem seus produtos.</p>
+          <a href="#" class="btn">Ver Modelo</a>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>&copy; 2025 GM Sites. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  
+  <!-- BOTÕES SOCIAIS -->
+  <div class="social-buttons">
+    <a href="https://wa.me/5511949271862" target="_blank" class="whatsapp">
+      <span class="material-icons">whatsapp</span>
+    </a>
+    <a href="https://instagram.com/site_gm" target="_blank" class="instagram">
+      <span class="material-icons">photo_camera</span>
+    </a>
+  </div>
 </body>
 </html>

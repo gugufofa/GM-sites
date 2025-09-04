@@ -1,127 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Planos | GM Sites</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="./images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GM Sites | Planos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-
-<!-- Botões flutuantes -->
-<div class="social-buttons">
-  <a href="https://wa.me/5511949271862" target="_blank" class="whatsapp-btn">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://instagram.com/seu_instagram" target="_blank" class="instagram-btn">
-    <i class="fab fa-instagram"></i>
-  </a>
-</div>
-
-
 <body>
+  <!-- HEADER -->
   <header>
     <div class="container">
-      <a href="index.html"><img src="images/logo-gm-sites-2.png" alt="GM Sites Logo" class="logo" /></a>
+      <a href="index.html">
+        <img src="images/logo-gm-sites-2.png" alt="GM Sites Logo" class="logo" />
+      </a>
       <nav>
         <ul>
           <li><a href="index.html#servicos">Serviços</a></li>
           <li><a href="index.html#sobre">Sobre</a></li>
           <li><a href="index.html#contato">Contato</a></li>
-          <li><a href="planos.html">Planos</a></li>
-          <li><a href="./modelos.html">Modelos</a></li>
+          <li><a href="planos.html" class="active">Planos</a></li>
+          <li><a href="modelos.html">Modelos</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h2>Nossos Planos</h2>
+      <p>Escolha o plano ideal para o seu negócio e leve sua presença online para outro nível.</p>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
   <section class="planos">
     <div class="container">
-      <h2>Planos de Criação de Sites</h2>
-      <div class="tabela-planos">
+      <div class="cards">
 
-        <div class="plano">
-          <h3>Landing Page</h3>
-          <p class="preco">R$ 900</p>
+        <!-- Plano Básico -->
+        <div class="card">
+          <span class="material-icons card-icone">language</span>
+          <h3>Básico</h3>
+          <p class="preco">R$ 49/mês</p>
           <ul>
-            <li>1 página personalizada</li>
-            <li>Design responsivo</li>
-            <li>Formulário de contato</li>
-            <li>Entrega rápida</li>
+            <li>✔ Site simples e responsivo</li>
+            <li>✔ Suporte básico</li>
+            <li>✔ 1 atualização mensal</li>
           </ul>
-          <a href="index.html#contato" class="btn">Contratar</a>
+          <a href="https://wa.me/55SEUNUMERO?text=Tenho%20interesse%20no%20Plano%20Básico%20do%20GM%20Sites." 
+             target="_blank" class="btn">Assinar</a>
         </div>
 
-        <div class="plano destaque">
-          <h3>Site 5 Páginas</h3>
-          <p class="preco">R$ 1.800</p>
+        <!-- Plano Profissional -->
+        <div class="card destaque">
+          <span class="material-icons card-icone">business_center</span>
+          <h3>Profissional</h3>
+          <p class="preco">R$ 99/mês</p>
           <ul>
-            <li>Até 5 páginas</li>
-            <li>Design profissional</li>
-            <li>SEO básico</li>
-            <li>Formulário de contato</li>
-            <li>Entrega em até 10 dias</li>
+            <li>✔ Design personalizado</li>
+            <li>✔ Suporte prioritário</li>
+            <li>✔ 4 atualizações mensais</li>
+            <li>✔ SEO básico incluso</li>
           </ul>
-          <a href="index.html#contato" class="btn">Contratar</a>
+          <a href="https://wa.me/55SEUNUMERO?text=Tenho%20interesse%20no%20Plano%20Profissional%20do%20GM%20Sites." 
+             target="_blank" class="btn">Assinar</a>
         </div>
 
-        <div class="plano">
-          <h3>Loja Virtual</h3>
-          <p class="preco">R$ 3.000</p>
+        <!-- Plano Premium -->
+        <div class="card">
+          <span class="material-icons card-icone">star</span>
+          <h3>Premium</h3>
+          <p class="preco">R$ 199/mês</p>
           <ul>
-            <li>Até 20 produtos</li>
-            <li>Carrinho de compras</li>
-            <li>Integração com WhatsApp</li>
-            <li>Design responsivo</li>
+            <li>✔ Design avançado e exclusivo</li>
+            <li>✔ Suporte completo 24/7</li>
+            <li>✔ Atualizações ilimitadas</li>
+            <li>✔ SEO avançado</li>
+            <li>✔ Consultoria digital mensal</li>
           </ul>
-          <a href="index.html#contato" class="btn">Contratar</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="planos manutencao">
-    <div class="container">
-      <h2>Planos de Manutenção</h2>
-      <div class="tabela-planos">
-
-        <div class="plano">
-          <h3>Básica</h3>
-          <p class="preco">R$ 120/mês</p>
-          <ul>
-            <li>Atualizações de conteúdo</li>
-            <li>Correção de erros</li>
-            <li>Backup mensal</li>
-            <li>Suporte via WhatsApp</li>
-          </ul>
-          <a href="index.html#contato" class="btn">Contratar</a>
-        </div>
-
-        <div class="plano destaque">
-          <h3>Avançada</h3>
-          <p class="preco">R$ 250/mês</p>
-          <ul>
-            <li>Inclui tudo da básica</li>
-            <li>Otimização SEO</li>
-            <li>Monitoramento de desempenho</li>
-            <li>Backup semanal</li>
-          </ul>
-          <a href="index.html#contato" class="btn">Contratar</a>
+          <a href="https://wa.me/55SEUNUMERO?text=Tenho%20interesse%20no%20Plano%20Premium%20do%20GM%20Sites." 
+             target="_blank" class="btn">Assinar</a>
         </div>
 
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>&copy; 2025 GM Sites. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-
+  <!-- BOTÕES SOCIAIS -->
+  <div class="social-buttons">
+    <a href="https://wa.me/5511949271862" target="_blank" class="whatsapp">
+      <span class="material-icons">whatsapp</span>
+    </a>
+    <a href="https://instagram.com/site_gm" target="_blank" class="instagram">
+      <span class="material-icons">photo_camera</span>
+    </a>
+  </div>
 </body>
 </html>

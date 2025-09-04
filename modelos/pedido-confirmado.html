@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Confirmado - Minha Loja Virtual</title>
+  <link rel="stylesheet" href="modelo-1.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <a href="modelo-1.html">Minha Loja</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="modelo-1.html">Início</a></li>
+        <li><a href="carrinho.html" class="cart">🛒 (0)</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="pedido-confirmado">
+    <h1>🎉 Pedido Confirmado!</h1>
+    <p>Obrigado por comprar conosco. Seu pedido foi processado com sucesso.</p>
+
+    <!-- Resumo do pedido -->
+    <section id="resumo-final">
+      <h2>Resumo do Pedido</h2>
+      <div id="lista-confirmacao"></div>
+      <p><strong>Total: <span id="total-confirmacao">R$ 0,00</span></strong></p>
+    </section>
+
+    <div class="acoes">
+      <a href="modelo-1.html" class="btn-finalizar">Continuar Comprando</a>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 - Minha Loja Virtual</p>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    // Mesmo mapeamento fixo
+    const PRODUTOS = {
+      1: { nome: "Camisa Pokémon", preco: 79.90, imagem: "images-2/Camisa-Pokemon.webp" },
+      2: { nome: "Caneca Gamer", preco: 39.90, imagem: "images-2/Caneca-Gamer.webp" },
+      3: { nome: "Mouse RGB", preco: 129.90, imagem: "images-2/Mouse-RGB.webp" },
+      4: { nome: "Headset Pro", preco: 199.90, imagem: "images-2/Headset-Pro.webp" }
+    };
+
+    // Lê último pedido salvo no localStorage
+    let pedidoFinal = JSON.parse(localStorage.getItem("pedido-final")) || [];
+
+    function carregarConfirmacao() {
+      const container = document.getElementById("lista-confirmacao");
+      const totalEl = document.getElementById("total-confirmacao");
+      container.innerHTML = "";
+      let total = 0;
+
+      if (pedidoFinal.length === 0) {
+        container.innerHTML = "<p>Nenhum produto encontrado neste pedido.</p>";
+        totalEl.textContent = "R$ 0,00";
+        return;
+      }
+
+      pedidoFinal.forEach(item => {
+        const produto = PRODUTOS[item.id];
+        if (!produto) return;
+
+        const div = document.createElement("div");
+        div.className = "item-checkout";
+        div.innerHTML = `
+          <img src="${produto.imagem}" alt="${produto.nome}" width="50">
+          <span>${produto.nome}</span>
+          <span>Qtd: ${item.quantidade}</span>
+          <span>Subtotal: R$ ${(produto.preco * item.quantidade).toFixed(2)}</span>
+        `;
+        container.appendChild(div);
+        total += produto.preco * item.quantidade;
+      });
+
+      totalEl.textContent = `R$ ${total.toFixed(2)}`;
+    }
+
+    document.addEventListener("DOMContentLoaded", carregarConfirmacao);
+  </script>
+</body>
+</html>

@@ -3,75 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja Virtual - Modelo</title>
-  <link rel="stylesheet" href="./modelo-1.css">
+  <title>Minha Loja Virtual</title>
+  <link rel="stylesheet" href="modelo-1.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header class="header">
-    <div class="logo">Minha Loja</div>
-    <nav class="nav">
-      <a href="./modelo-1.html">Início</a>
-      <a href="./produto.html">Produtos</a>
-      <a href="./">Categorias</a>
-      <a href="">Contato</a>
-    </nav>
-    <div class="icons">
-      <input type="text" placeholder="Buscar..." class="search">
-      <button class="cart">🛒</button>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <a href="modelo-1.html">Minha Loja</a>
     </div>
+    <nav>
+      <ul>
+        <li><a href="modelo-1.html">Início</a></li>
+        <li><a href="carrinho.html" class="cart">🛒 (0)</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Banner -->
-  <section class="hero">
-    <h1>Bem-vindo à Minha Loja</h1>
-    <p>Os melhores produtos em um só lugar</p>
-    <a href="#" class="btn">Ver Produtos</a>
-  </section>
+  <!-- ===== MENSAGEM DE PRODUTO ===== -->
+  <div id="mensagem-produto" class="mensagem-oculta"></div>
 
-  <!-- Categorias -->
-  <section class="categorias">
-    <h2>Categorias</h2>
-    <div class="grid-categorias">
-      <div class="card">Eletrônicos</div>
-      <div class="card">Roupas</div>
-      <div class="card">Acessórios</div>
-      <div class="card">Promoções</div>
+  <!-- ===== LISTA DE PRODUTOS ===== -->
+  <main>
+    <h1>Produtos em Destaque</h1>
+    <div id="lista-produtos" class="grid-produtos">
+      
+      <!-- Produto 1 -->
+      <div class="card-produto">
+        <img src="images-2/Camisa-Pokemon.webp" alt="Camisa Pokémon" >
+        <h2>Camisa Pokémon</h2>
+        <p>R$ 79,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(1)">Adicionar ao Carrinho</button>
+      </div>
+
+      <!-- Produto 2 -->
+      <div class="card-produto">
+        <img src="images-2/Caneca-Gamer.webp" alt="Caneca Gamer">
+        <h2>Caneca Gamer</h2>
+        <p>R$ 39,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(2)">Adicionar ao Carrinho</button>
+      </div>
+
+      <!-- Produto 3 -->
+      <div class="card-produto">
+        <img src="images-2/Mouse-RGB.webp" alt="Mouse RGB">
+        <h2>Mouse RGB</h2>
+        <p>R$ 129,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(3)">Adicionar ao Carrinho</button>
+      </div>
+
+      <!-- Produto 4 -->
+      <div class="card-produto">
+        <img src="images-2/Headset-Pro.webp" alt="Headset Pro">
+        <h2>Headset Pro</h2>
+        <p>R$ 199,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(4)">Adicionar ao Carrinho</button>
+      </div>
+
     </div>
-  </section>
+  </main>
 
-  <!-- Produtos -->
-  <section class="produtos">
-    <h2>Produtos em Destaque</h2>
-    <div class="grid-produtos">
-      <div class="produto">
-        <img src="https://via.placeholder.com/200" alt="Produto 1">
-        <h3>Produto 1</h3>
-        <p class="preco">R$ 99,90</p>
-        <button class="btn">Adicionar ao Carrinho</button>
-      </div>
-      <div class="produto">
-        <img src="https://via.placeholder.com/200" alt="Produto 2">
-        <h3>Produto 2</h3>
-        <p class="preco">R$ 149,90</p>
-        <button class="btn">Adicionar ao Carrinho</button>
-      </div>
-      <div class="produto">
-        <img src="https://via.placeholder.com/200" alt="Produto 3">
-        <h3>Produto 3</h3>
-        <p class="preco">R$ 199,90</p>
-        <button class="btn">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p>© 2025 Minha Loja - Todos os direitos reservados.</p>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 - Minha Loja Virtual</p>
   </footer>
 
-  <!-- Botões Fixos -->
-  <a href="https://wa.me/seunumerowhatsapp" target="_blank" class="btn-flutuante whatsapp">💬</a>
-  <a href="https://instagram.com/seuinstagram" target="_blank" class="btn-flutuante instagram">📷</a>
+  <!-- ===== SCRIPTS ===== -->
+  <script src="modelo-1.js"></script>
 </body>
 </html>

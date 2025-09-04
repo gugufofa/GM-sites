@@ -3,47 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contato - Minha Loja</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Contato - Minha Loja Virtual</title>
+  <link rel="stylesheet" href="modelo-1.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header class="header">
-    <div class="logo">Minha Loja</div>
-    <nav class="nav">
-      <a href="index.html">Início</a>
-      <a href="index.html#produtos">Produtos</a>
-      <a href="carrinho.html">Carrinho</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-    <div class="icons">
-      <input type="text" placeholder="Buscar..." class="search">
-      <button class="cart">🛒</button>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <a href="modelo-1.html">Minha Loja</a>
     </div>
+    <nav>
+      <ul>
+        <li><a href="modelo-1.html">Início</a></li>
+        <li><a href="carrinho.html" class="cart">🛒 (0)</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Formulário de Contato -->
-  <section class="contato">
-    <h1>Entre em Contato</h1>
-    <p>Preencha o formulário abaixo e retornaremos em breve:</p>
+  <!-- ===== CONTATO ===== -->
+  <main>
+    <section class="contato">
+      <h1>Fale Conosco</h1>
 
-    <form class="form-contato">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+      <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" required>
 
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" required>
 
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" rows="5" required></textarea>
 
-      <button type="submit" class="btn">Enviar Mensagem</button>
-    </form>
-  </section>
+        <button type="submit" class="btn btn-destaque">Enviar</button>
+      </form>
 
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p>© 2025 Minha Loja - Todos os direitos reservados.</p>
+      <div class="info-contato">
+        <p><strong>Email:</strong> suporte@minhaloja.com</p>
+        <p><strong>Telefone:</strong> (11) 99999-9999</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 - Minha Loja Virtual</p>
   </footer>
+
+  <script src="modelo-1.js"></script>
 </body>
 </html>

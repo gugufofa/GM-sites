@@ -1,105 +1,122 @@
-/* ======= Fonte ======= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
 body {
-  background: #f5f7fa;
+  background: #fdfdfd;
   color: #333;
   line-height: 1.6;
 }
 
-/* ======= Header ======= */
+/* ===== CONTAINER ===== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
 header {
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #004aad;
+  padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
+  flex-wrap: wrap;
 }
 
 header .logo {
-  height: 60px;
+  height: 70px;
+  transition: transform 0.2s ease;
 }
 
-header nav ul {
-  list-style: none;
+header .logo:hover {
+  transform: scale(1.05);
+}
+
+nav ul {
   display: flex;
-  gap: 25px;
+  list-style: none;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-header nav a {
-  text-decoration: none;
-  color: #004aad;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-header nav a:hover,
-header nav a.ativo {
-  color: #002d70;
-}
-
-/* ======= Hero ======= */
-.hero {
-  background: linear-gradient(135deg, #004aad, #0077ff);
+nav ul li a {
   color: #fff;
-  padding: 100px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: rgba(255,255,255,0.15);
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #004aad, #002f70);
+  color: #fff;
   text-align: center;
+  padding: 100px 20px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .hero h2 {
   font-size: 2.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  opacity: 0.9;
 }
 
-.btn {
+.hero .btn {
   display: inline-block;
-  background: linear-gradient(135deg, #004aad, #0077ff);
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 12px;
+  padding: 12px 25px;
+  background: #ffd700;
+  color: #004aad;
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s;
 }
 
-.btn:hover {
+.hero .btn:hover {
+  background: #ffc107;
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* ======= Seções ======= */
+/* ===== SEÇÕES ===== */
 section {
-  padding: 70px 20px;
+  padding: 60px 20px;
 }
 
-section h2 {
+h2 {
   text-align: center;
-  font-size: 2rem;
   margin-bottom: 40px;
+  font-size: 2rem;
   color: #004aad;
 }
 
-/* ======= Cards ======= */
-.cards, .grid-modelos {
+/* ===== CARDS ===== */
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
@@ -108,160 +125,179 @@ section h2 {
 .card, .modelo-card {
   background: #fff;
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover, .modelo-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
 }
 
-.modelo-card img {
-  border-radius: 12px 12px 0 0;
-  height: 180px;
-  width: 100%;
-  object-fit: cover;
+.card h3, .modelo-card h3 {
+  margin-bottom: 12px;
+  color: #222;
 }
 
-/* ======= Formulário ======= */
-.form-contato input,
-.form-contato textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.card p, .modelo-card p {
   font-size: 1rem;
+  color: #555;
 }
 
-.form-contato button {
-  background: linear-gradient(135deg, #004aad, #0077ff);
+.card-icone, .modelo-icone {
+  margin-bottom: 15px;
+}
+
+.card-icone .material-icons,
+.modelo-icone .material-icons {
+  font-size: 48px;
+  color: #004aad;
+}
+
+/* ===== PLANOS ===== */
+.planos {
+  background: #f8faff;
+  text-align: center;
+  border-radius: 40px;
+  padding: 60px 20px;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.card .preco {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #004aad;
+  margin: 20px 0;
+}
+
+.card .btn {
+  background: #004aad;
   color: #fff;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: inline-block;
+  transition: background 0.3s, transform 0.2s ease;
 }
 
-.form-contato button:hover {
+.card .btn:hover {
+  background: #003080;
+  transform: scale(1.05);
+}
+
+.card.destaque {
+  border: 2px solid #004aad;
+  transform: scale(1.03);
+}
+.card.destaque:hover {
+  transform: scale(1.06);
+}
+
+/* ===== SOBRE ===== */
+.sobre p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* ===== CONTATO ===== */
+.contato {
+  text-align: center;
+}
+
+.contato .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s ease;
+}
+
+.contato .btn:hover {
+  background: #1da851;
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* ======= Footer ======= */
+/* ===== FOOTER ===== */
 footer {
   background: #004aad;
   color: #fff;
   text-align: center;
-  padding: 20px;
-  margin-top: 50px;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-/* Botões flutuantes */
+/* ===== BOTÕES SOCIAIS ===== */
 .social-buttons {
   position: fixed;
-  right: 20px;
   bottom: 20px;
+  right: 20px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  z-index: 1000;
+  gap: 12px;
 }
 
 .social-buttons a {
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  background: #004aad;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 28px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.whatsapp-btn {
-  background: #25D366;
-}
-
-.instagram-btn {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  text-decoration: none;
+  font-size: 26px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, background 0.3s;
 }
 
 .social-buttons a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+  transform: translateY(-3px);
 }
 
-/* ======= Responsividade ======= */
-@media (max-width: 992px) {
-  header .container {
-    flex-direction: row;
-  }
-
-  header nav ul {
-    gap: 15px;
-  }
+.social-buttons .whatsapp {
+  background: #25d366;
 }
 
+.social-buttons .instagram {
+  background: #e1306c;
+}
+
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
-  /* Logo menor em tablets */
-  header .logo {
-    height: 65px;
-  }
-
   .hero h2 {
-    font-size: clamp(1.6rem, 5vw, 2rem);
+    font-size: 2rem;
   }
 
-  .hero p {
-    font-size: 1rem;
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin-top: 15px;
   }
 
-  .cards, .grid-modelos {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 50px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Layout mobile */
   header .container {
     flex-direction: column;
-    gap: 10px;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .hero {
-    padding: 60px 15px;
-  }
-
-  .hero h2 {
-    font-size: 1.5rem;
-  }
-
-  .btn,
-  .form-contato button {
-    width: 100%;
-    text-align: center;
-  }
-
-  .form-contato input,
-  .form-contato textarea {
-    font-size: 0.95rem;
   }
 }
-
-
-

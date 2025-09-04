@@ -5,27 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GM Sites | Criação e Manutenção de Sites</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-
-<!-- Botões flutuantes -->
-<div class="social-buttons">
-  <a href="https://wa.me/5511949271862" target="_blank" class="whatsapp-btn">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://instagram.com/seu_instagram" target="_blank" class="instagram-btn">
-    <i class="fab fa-instagram"></i>
-  </a>
-</div>
-
-
 <body>
+  <!-- ===== HEADER ===== -->
   <header>
     <div class="container">
-      <a href="index.html"><img src="images/logo-gm-sites-2.png" alt="GM Sites Logo" class="logo" /></a>
+      <a href="index.html">
+        <img src="images/logo-gm-sites-2.png" alt="GM Sites Logo" class="logo" />
+      </a>
       <nav>
         <ul>
           <li><a href="#servicos">Serviços</a></li>
@@ -38,6 +28,7 @@
     </div>
   </header>
 
+  <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="container">
       <h2>Sites Personalizados para o seu Negócio</h2>
@@ -46,19 +37,23 @@
     </div>
   </section>
 
+  <!-- ===== SERVIÇOS ===== -->
   <section id="servicos" class="servicos">
     <div class="container">
       <h2>Nossos Serviços</h2>
       <div class="cards">
         <div class="card">
+          <span class="material-icons card-icone">web</span>
           <h3>Criação de Sites</h3>
           <p>Sites responsivos, rápidos e otimizados para atrair mais clientes.</p>
         </div>
         <div class="card">
+          <span class="material-icons card-icone">build</span>
           <h3>Manutenção</h3>
           <p>Atualizações, ajustes técnicos e suporte contínuo para o seu site.</p>
         </div>
         <div class="card">
+          <span class="material-icons card-icone">trending_up</span>
           <h3>SEO & Otimização</h3>
           <p>Melhoria no Google e maior conversão através de SEO estratégico.</p>
         </div>
@@ -66,49 +61,44 @@
     </div>
   </section>
 
+  <!-- ===== SOBRE ===== -->
   <section id="sobre" class="sobre">
     <div class="container">
       <h2>Sobre Nós</h2>
-      <p>Somos especialistas apaixonados por criar sites que representam a essência de cada cliente. Combinamos design moderno, performance e estratégias digitais para fortalecer sua presença online.</p>
+      <p>
+        Somos especialistas apaixonados por criar sites que representam a essência de cada cliente.
+        Combinamos design moderno, performance e estratégias digitais para fortalecer sua presença online.
+      </p>
     </div>
   </section>
 
+  <!-- ===== CONTATO ===== -->
   <section id="contato" class="contato">
     <div class="container">
       <h2>Entre em Contato</h2>
-      <div class="form-contato" id="formContato">
-        <input type="text" id="nome" placeholder="Seu Nome" required />
-        <input type="email" id="email" placeholder="Seu Email" required />
-        <textarea id="mensagem" placeholder="Sua Mensagem" required></textarea>
-        <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
-      </div>
+      <p>Fale conosco diretamente pelo WhatsApp e solicite seu orçamento.</p>
+      <a href="https://wa.me/55SEUNUMERO?text=Olá,%20gostaria%20de%20um%20orçamento%20no%20site%20GM%20Sites." 
+         target="_blank" class="btn">
+        <span class="material-icons">chat</span> Chamar no WhatsApp
+      </a>
     </div>
   </section>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="container">
       <p>&copy; 2025 GM Sites. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <script>
-  function enviarWhatsApp() {
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const mensagem = document.getElementById("mensagem").value;
-
-    if (!nome || !email || !mensagem) {
-      alert("Por favor, preencha todos os campos!");
-      return;
-    }
-
-    const texto = `Olá, meu nome é ${nome}.%0AEmail: ${email}%0A%0A${mensagem}`;
-    const numero = "5511949271862"; // altere para o seu número
-    const url = `https://wa.me/${numero}?text=${texto}`;
-    window.open(url, "_blank");
-  }
-  </script>
-
-
+  <!-- ===== BOTÕES SOCIAIS ===== -->
+  <div class="social-buttons">
+    <a href="https://wa.me/5511949271862" target="_blank" class="whatsapp">
+      <span class="material-icons">whatsapp</span>
+    </a>
+    <a href="https://instagram.com/site_gm" target="_blank" class="instagram">
+      <span class="material-icons">photo_camera</span>
+    </a>
+  </div>
 </body>
 </html>

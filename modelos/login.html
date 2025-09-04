@@ -3,64 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Minha Loja</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Login - Minha Loja Virtual</title>
+  <link rel="stylesheet" href="modelo-1.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header class="header">
-    <div class="logo">Minha Loja</div>
-    <nav class="nav">
-      <a href="index.html">Início</a>
-      <a href="index.html#produtos">Produtos</a>
-      <a href="carrinho.html">Carrinho</a>
-      <a href="contato.html">Contato</a>
-      <a href="login.html" class="active">Login</a>
-    </nav>
-    <div class="icons">
-      <input type="text" placeholder="Buscar..." class="search">
-      <button class="cart">🛒</button>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <a href="modelo-1.html">Minha Loja</a>
     </div>
+    <nav>
+      <ul>
+        <li><a href="modelo-1.html">Início</a></li>
+        <li><a href="carrinho.html" class="cart">🛒 (0)</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Login -->
-  <section class="login-container">
-    <div class="form-box">
-      <h1>Entrar</h1>
-      <form class="form-login">
-        <input type="email" placeholder="E-mail" required>
-        <input type="password" placeholder="Senha" required>
-        <button type="submit" class="btn">Login</button>
-      </form>
-      <p>Não tem conta? <a href="#registro" onclick="toggleForm('registro')">Registre-se</a></p>
-    </div>
+  <!-- ===== LOGIN ===== -->
+  <main>
+    <section class="login">
+      <h1>Entrar na Conta</h1>
 
-    <div class="form-box hidden" id="registro">
-      <h1>Criar Conta</h1>
-      <form class="form-login">
-        <input type="text" placeholder="Nome completo" required>
-        <input type="email" placeholder="E-mail" required>
-        <input type="password" placeholder="Senha" required>
-        <button type="submit" class="btn">Registrar</button>
-      </form>
-      <p>Já possui conta? <a href="#login" onclick="toggleForm('login')">Faça login</a></p>
-    </div>
-  </section>
+      <form>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" required>
 
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p>© 2025 Minha Loja - Todos os direitos reservados.</p>
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" required>
+
+        <button type="submit" class="btn btn-destaque">Entrar</button>
+      </form>
+
+      <p class="registro">Ainda não tem conta? <a href="#">Cadastre-se</a></p>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 - Minha Loja Virtual</p>
   </footer>
 
-  <script>
-    function toggleForm(form) {
-      document.querySelectorAll(".form-box").forEach(f => f.classList.add("hidden"));
-      if (form === "registro") {
-        document.getElementById("registro").classList.remove("hidden");
-      } else {
-        document.querySelector(".login-container .form-box").classList.remove("hidden");
-      }
-    }
-  </script>
+  <script src="modelo-1.js"></script>
 </body>
 </html>

@@ -3,71 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout - Minha Loja</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Checkout - Minha Loja Virtual</title>
+  <link rel="stylesheet" href="modelo-1.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header class="header">
-    <div class="logo">Minha Loja</div>
-    <nav class="nav">
-      <a href="index.html">Início</a>
-      <a href="index.html#produtos">Produtos</a>
-      <a href="carrinho.html">Carrinho</a>
-      <a href="contato.html">Contato</a>
-      <a href="login.html">Login</a>
-    </nav>
-    <div class="icons">
-      <input type="text" placeholder="Buscar..." class="search">
-      <button class="cart">🛒</button>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <a href="modelo-1.html">Minha Loja</a>
     </div>
+    <nav>
+      <ul>
+        <li><a href="modelo-1.html">Início</a></li>
+        <li><a href="carrinho.html" class="cart">🛒 (0)</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Checkout -->
-  <section class="checkout">
+  <!-- ===== MAIN ===== -->
+  <main>
     <h1>Finalizar Compra</h1>
 
-    <form class="form-checkout">
-      <!-- Dados Pessoais -->
-      <h2>Dados Pessoais</h2>
-      <input type="text" placeholder="Nome Completo" required>
-      <input type="email" placeholder="E-mail" required>
-      <input type="tel" placeholder="Telefone" required>
+    <!-- Resumo do pedido -->
+    <section id="resumo-pedido">
+      <h2>Resumo do Pedido</h2>
+      <div id="lista-checkout"></div>
+      <p><strong>Total: <span id="total-checkout">R$ 0,00</span></strong></p>
+    </section>
 
-      <!-- Endereço -->
-      <h2>Endereço de Entrega</h2>
-      <input type="text" placeholder="Rua e número" required>
-      <input type="text" placeholder="Bairro" required>
-      <input type="text" placeholder="Cidade" required>
-      <input type="text" placeholder="Estado" required>
-      <input type="text" placeholder="CEP" required>
+    <!-- Formulário de pagamento -->
+    <section>
+      <h2>Dados de Pagamento</h2>
+      <form onsubmit="finalizarCompra(event)">
+        <label for="nome">Nome no Cartão:</label>
+        <input type="text" id="nome" required>
 
-      <!-- Pagamento -->
-      <h2>Pagamento</h2>
-      <select required>
-        <option value="">Selecione a forma de pagamento</option>
-        <option value="cartao">Cartão de Crédito</option>
-        <option value="boleto">Boleto Bancário</option>
-        <option value="pix">Pix</option>
-      </select>
+        <label for="numero">Número do Cartão:</label>
+        <input type="text" id="numero" maxlength="16" required>
 
-      <div class="pagamento-cartao">
-        <input type="text" placeholder="Número do cartão" maxlength="16">
-        <input type="text" placeholder="Nome impresso no cartão">
-        <div class="inline">
-          <input type="text" placeholder="Validade (MM/AA)" maxlength="5">
-          <input type="text" placeholder="CVV" maxlength="3">
-        </div>
-      </div>
+        <label for="validade">Validade:</label>
+        <input type="month" id="validade" required>
 
-      <!-- Botão Finalizar -->
-      <button type="submit" class="btn">Confirmar Pedido</button>
-    </form>
-  </section>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" maxlength="3" required>
 
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p>© 2025 Minha Loja - Todos os direitos reservados.</p>
+        <button type="submit" class="btn-finalizar">Confirmar Pagamento</button>
+      </form>
+    </section>
+
+    <div id="mensagem" class="mensagem-oculta"></div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 - Minha Loja Virtual</p>
   </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+  const PRODUTOS = {
+    1: { nome: "Camisa Pokémon", preco: 79.90, imagem: "images-2/Camisa-Pokemon.webp" },
+    2: { nome: "Caneca Gamer", preco: 39.90, imagem: "images-2/Caneca-Gamer.webp" },
+    3: { nome: "Mouse RGB", preco: 129.90, imagem: "images-2/Mouse-RGB.webp" },
+    4: { nome: "Headset Pro", preco: 199.90, imagem: "images-2/Headset-Pro.webp" }
+  };
+
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+  function carregarCheckout() {
+    const container = document.getElementById("lista-checkout");
+    const totalEl = document.getElementById("total-checkout");
+    container.innerHTML = "";
+    let total = 0;
+
+    if (carrinho.length === 0) {
+      container.innerHTML = "<p>Seu carrinho está vazio.</p>";
+      totalEl.textContent = "R$ 0,00";
+      return;
+    }
+
+    carrinho.forEach(item => {
+      const produto = PRODUTOS[item.id];
+      if (!produto) return;
+      const qtd = item.quantidade || 1;
+
+      const div = document.createElement("div");
+      div.className = "item-checkout";
+      div.innerHTML = `
+        <img src="${produto.imagem}" alt="${produto.nome}" width="50">
+        <span>${produto.nome}</span>
+        <span>Qtd: ${qtd}</span>
+        <span>Subtotal: R$ ${(produto.preco * qtd).toFixed(2)}</span>
+      `;
+      container.appendChild(div);
+      total += produto.preco * qtd;
+    });
+
+    totalEl.textContent = `R$ ${total.toFixed(2)}`;
+  }
+
+  function finalizarCompra(event) {
+    event.preventDefault();
+    if (carrinho.length === 0) {
+      alert("Seu carrinho está vazio!");
+      return;
+    }
+
+    // Salva o pedido final
+    localStorage.setItem("pedido-final", JSON.stringify(carrinho));
+
+    // Limpa carrinho
+    carrinho = [];
+    localStorage.removeItem("carrinho");
+
+    // Redireciona
+    setTimeout(() => window.location.href = "pedido-confirmado.html", 1500);
+  }
+
+  document.addEventListener("DOMContentLoaded", carregarCheckout);
+</script>
+
 </body>
 </html>
