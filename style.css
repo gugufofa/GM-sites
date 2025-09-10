@@ -156,6 +156,27 @@ h2 {
   color: #004aad;
 }
 
+/* ===== BOTÕES DOS MODELOS ===== */
+.modelo-card .btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #004aad, #007bff);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.modelo-card .btn:hover {
+  background: linear-gradient(135deg, #003080, #0056b3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+
 /* ===== PLANOS ===== */
 .planos {
   background: #f8faff;
@@ -300,4 +321,5 @@ footer {
   header .container {
     flex-direction: column;
   }
+
 }
