@@ -1,4 +1,21 @@
-/* ===== RESET ===== */
+/* =====================================================
+   GM Sites - Estilo Principal (Versão Aprimorada)
+   Paleta: Azul #004aad, Azul Claro #007bff, Dourado #ffd700
+   ===================================================== */
+
+/* ===== RESET & BASE ===== */
+:root {
+  --cor-primaria: #004aad;
+  --cor-secundaria: #007bff;
+  --cor-destaque: #ffd700;
+  --cor-texto: #333;
+  --cor-fundo: #fdfdfd;
+  --cor-card: #fff;
+  --cor-sucesso: #25d366;
+  --sombra-suave: 0 4px 12px rgba(0,0,0,0.06);
+  --transicao: all 0.25s ease;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,15 +23,14 @@
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
-body {
-  background: #fdfdfd;
-  color: #333;
-  line-height: 1.6;
+html {
+  scroll-behavior: smooth;
 }
 
-
-/* ===== ANIMAÇÃO DE ENTRADA SUAVE ===== */
 body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
   opacity: 0;
   transform: translateY(10px);
   animation: fadeIn 0.8s ease-out forwards;
@@ -27,21 +43,18 @@ body {
   }
 }
 
-/* Animações suaves em seções */
+/* ===== ENTRADA SUAVE POR SEÇÃO ===== */
 section, header, footer {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(25px);
   animation: fadeSection 1s ease-out forwards;
 }
-
 @keyframes fadeSection {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-/* Adiciona atraso em cada seção */
 header { animation-delay: 0.1s; }
 .hero { animation-delay: 0.2s; }
 .servicos { animation-delay: 0.4s; }
@@ -58,12 +71,13 @@ footer { animation-delay: 1s; }
 
 /* ===== HEADER ===== */
 header {
-  background: #004aad;
+  background: var(--cor-primaria);
   padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: var(--transicao);
 }
 
 header .container {
@@ -94,8 +108,8 @@ nav ul li a {
   text-decoration: none;
   font-weight: 600;
   padding: 8px 12px;
-  border-radius: 4px;
-  transition: background 0.3s;
+  border-radius: 6px;
+  transition: var(--transicao);
 }
 
 nav ul li a:hover,
@@ -105,34 +119,41 @@ nav ul li a.active {
 
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, #004aad, #002f70);
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
   color: #fff;
   text-align: center;
   padding: 100px 20px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
+  overflow: hidden;
+  position: relative;
 }
 
 .hero h2 {
+  font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   margin-bottom: 20px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 
 .hero p {
+  font-family: "Lato", sans-serif;
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   opacity: 0.9;
 }
 
 .hero .btn {
   display: inline-block;
-  padding: 12px 25px;
-  background: #ffd700;
-  color: #004aad;
+  padding: 14px 28px;
+  background: var(--cor-destaque);
+  color: var(--cor-primaria);
   text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: transform 0.2s ease, background 0.3s;
+  border-radius: 40px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: var(--transicao);
+  animation: pulse 2.5s ease-in-out infinite;
 }
 
 .hero .btn:hover {
@@ -140,16 +161,23 @@ nav ul li a.active {
   transform: translateY(-3px);
 }
 
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 /* ===== SEÇÕES ===== */
 section {
-  padding: 60px 20px;
+  padding: 70px 20px;
 }
 
 h2 {
   text-align: center;
   margin-bottom: 40px;
   font-size: 2rem;
-  color: #004aad;
+  color: var(--cor-primaria);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 
 /* ===== CARDS ===== */
@@ -160,25 +188,27 @@ h2 {
 }
 
 .card, .modelo-card {
-  background: #fff;
+  background: var(--cor-card);
   padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border-radius: 18px;
+  box-shadow: var(--sombra-suave);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: var(--transicao);
 }
 
 .card:hover, .modelo-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
 }
 
 .card h3, .modelo-card h3 {
   margin-bottom: 12px;
   color: #222;
+  font-family: "Poppins", sans-serif;
 }
 
 .card p, .modelo-card p {
+  font-family: "Lato", sans-serif;
   font-size: 1rem;
   color: #555;
 }
@@ -190,29 +220,37 @@ h2 {
 .card-icone .material-icons,
 .modelo-icone .material-icons {
   font-size: 48px;
-  color: #004aad;
+  color: var(--cor-primaria);
 }
 
-/* ===== BOTÕES DOS MODELOS ===== */
-.modelo-card .btn {
+/* ===== BOTÕES ===== */
+.btn, .card .btn, .modelo-card .btn {
   display: inline-block;
-  margin-top: 15px;
   padding: 12px 25px;
   border-radius: 30px;
-  background: linear-gradient(135deg, #004aad, #007bff);
-  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s, transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: var(--transicao);
 }
 
+.modelo-card .btn {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 .modelo-card .btn:hover {
   background: linear-gradient(135deg, #003080, #0056b3);
   transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
+.card .btn {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+.card .btn:hover {
+  background: #003080;
+  transform: scale(1.05);
+}
 
 /* ===== PLANOS ===== */
 .planos {
@@ -228,37 +266,20 @@ h2 {
   margin: 15px 0;
   text-align: left;
 }
-
 .card ul li {
   margin-bottom: 8px;
   color: #333;
   font-size: 0.95rem;
 }
-
 .card .preco {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #004aad;
+  color: var(--cor-primaria);
   margin: 20px 0;
 }
 
-.card .btn {
-  background: #004aad;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 30px;
-  display: inline-block;
-  transition: background 0.3s, transform 0.2s ease;
-}
-
-.card .btn:hover {
-  background: #003080;
-  transform: scale(1.05);
-}
-
 .card.destaque {
-  border: 2px solid #004aad;
+  border: 2px solid var(--cor-primaria);
   transform: scale(1.03);
 }
 .card.destaque:hover {
@@ -271,24 +292,17 @@ h2 {
   max-width: 800px;
   margin: 0 auto;
   font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 /* ===== CONTATO ===== */
 .contato {
   text-align: center;
 }
-
 .contato .btn {
-  display: inline-block;
-  padding: 12px 25px;
-  border-radius: 30px;
-  background: #25d366;
+  background: var(--cor-sucesso);
   color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s ease;
 }
-
 .contato .btn:hover {
   background: #1da851;
   transform: translateY(-3px);
@@ -296,13 +310,15 @@ h2 {
 
 /* ===== FOOTER ===== */
 footer {
-  background: #004aad;
+  background: var(--cor-primaria);
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 25px 0;
   margin-top: 40px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+  font-size: 0.95rem;
 }
 
 /* ===== BOTÕES SOCIAIS ===== */
@@ -319,15 +335,14 @@ footer {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #004aad;
+  background: var(--cor-primaria);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
   font-size: 26px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease, background 0.3s;
+  transition: var(--transicao);
 }
 
 .social-buttons a:hover {
@@ -335,28 +350,42 @@ footer {
 }
 
 .social-buttons .whatsapp {
-  background: #25d366;
+  background: var(--cor-sucesso);
 }
-
 .social-buttons .instagram {
   background: #e1306c;
 }
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
-  .hero h2 {
-    font-size: 2rem;
+  header .container {
+    flex-direction: column;
   }
-
   nav ul {
     flex-direction: column;
     gap: 10px;
     text-align: center;
     margin-top: 15px;
   }
-
-  header .container {
-    flex-direction: column;
+  .hero h2 {
+    font-size: 2rem;
   }
+}
 
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 15px;
+  }
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
 }
